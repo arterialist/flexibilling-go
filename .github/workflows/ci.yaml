@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: "1.22"
+          cache: false
       - run: gofmt -d flexibilling examples/basic
       - run: go vet ./...
       - run: go test ./...
