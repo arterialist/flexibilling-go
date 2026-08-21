@@ -67,4 +67,9 @@ go vet ./...
 go test ./...
 ```
 
+The SQLite integration test uses the current pure-Go `modernc.org/sqlite`
+driver to exercise the public repository and cache interfaces against a
+persistent database, including workers, idempotency, refunds, and reopening
+the database.
+
 See [CONTRIBUTING.md](CONTRIBUTING.md) for adapter and release guidance.

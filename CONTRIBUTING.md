@@ -2,7 +2,7 @@
 
 ## Setup
 
-Install the Go toolchain and run:
+Install Go 1.27 or newer and run:
 
 ```bash
 gofmt -w flexibilling/*.go
@@ -13,6 +13,11 @@ go test ./...
 The tests cover exact-decimal rating, waterfall fallback, distinct domain
 errors, ledger writes, payment idempotency, usage sessions, charge/refund,
 worker processing, and period snapshots.
+
+`flexibilling/sqlite_integration_test.go` is the minimal real-backend
+conformance test. The SQLite driver is used only by tests; Go modules do not
+have a separate dev-dependency section, so it remains in `go.mod` while the
+library API stays database-agnostic.
 
 ## Backend adapters
 
