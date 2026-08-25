@@ -1,0 +1,34 @@
+site_name: FlexiBilling for Go
+site_description: Provider-agnostic usage metering and balance billing for Go backends.
+site_url: https://arterialist.github.io/flexibilling-go/
+repo_name: arterialist/flexibilling-go
+repo_url: https://github.com/arterialist/flexibilling-go
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Concepts: concepts.md
+  - Backend integration: backends.md
+  - Framework integrations: integrations.md
+  - Operations: operations.md
+  - Development and releases: development.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+strict: true
