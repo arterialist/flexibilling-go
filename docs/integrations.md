@@ -1,7 +1,7 @@
 # Framework integrations
 
-The package has no required web framework. Bind billing to the host request
-layer explicitly.
+The package does not include framework glue. Bind billing to the host request
+layer at the point where the customer is authenticated.
 
 ## Request boundary
 
@@ -36,7 +36,7 @@ domain-specific response.
 
 ## Request wrappers
 
-Go middleware is not required. A handler can call `RequireBalance`,
+Go middleware is optional. A handler can call `RequireBalance`,
 `BillingService.Charge`, or `WriteUsageSession` directly. This keeps the
 integration compatible with `net/http`, Gin, Echo, gRPC, and worker runtimes.
 

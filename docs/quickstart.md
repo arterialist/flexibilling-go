@@ -66,4 +66,4 @@ The session writes `DurationSeconds` to the record and mirrors it into
 ## 5. Use a custom backend
 
 Implement `BillingRepository`, `UsageRepository`, and `BillingCache` for the
-host database and cache. The in-memory adapters are not required in production.
+host database and cache. Use a database-backed implementation in production.

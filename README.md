@@ -5,13 +5,13 @@
 [![Docs](https://img.shields.io/badge/docs-online-blue.svg)](https://arterialist.github.io/flexibilling-go/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-FlexiBilling is a provider-agnostic billing engine for Go backends. It tracks
+FlexiBilling is a billing engine for Go backends. It tracks
 named balances, rates usage, applies priority rules, writes ledger entries, and
 processes pending usage records.
 
-The package does not require a database, web framework, cache, or payment
-provider. Implement the exported repository and cache interfaces for the host's
-storage and transaction boundaries, or use the included in-memory adapters.
+The package leaves storage, web frameworks, caches, and payment providers to the
+host application. Implement the exported repository and cache interfaces for the
+host's storage and transaction boundaries, or use the included in-memory adapters.
 
 ## Install
 
@@ -72,14 +72,14 @@ record, err := billing.WriteUsageSession(context, false, true, usageRepository)
 `EventMetadata["duration_seconds"]` when the caller has not already set it.
 Set `writeOnException` to `false` to skip failed operations.
 
-## What is included
+## Included components
 
 - `BillingService` funds accounts, rates usage, charges, refunds, and updates cache views.
 - `BillingRepository`, `UsageRepository`, and `BillingCache` define backend ports.
 - `Rate` and `EvaluateWaterfall` calculate costs and select fundable rules.
 - `BillingContext` and `WriteUsageSession` record operation-boundary usage.
-- `BillingWorker` processes pending records with retry-safe state transitions.
-- The in-memory adapters support tests and small local programs.
+- `BillingWorker` processes pending records and records each outcome.
+- The in-memory adapters are useful in tests and local programs.
 
 ## Documentation
 

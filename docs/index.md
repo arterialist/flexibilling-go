@@ -26,7 +26,7 @@ Amounts use an exact decimal wrapper backed by `math/big.Rat`.
 - [Operations](operations.md) covers transactions, retries, cache behavior, and production checks.
 - [Development and releases](development.md) covers local checks, CI, docs, and module indexing.
 
-## Design guarantees
+## Behavior
 
 1. Billing decisions do not depend on a storage provider.
 2. Asset and service names are application-defined strings.

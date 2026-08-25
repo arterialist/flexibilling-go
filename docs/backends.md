@@ -27,8 +27,8 @@ func (repository *DatabaseRepository) GetActiveRules(service string) ([]billing.
 // Implement the remaining BillingRepository and UsageRepository methods.
 ```
 
-The interfaces are deliberately explicit. The compiler checks that the
-complete port is implemented before it is passed to `BillingService`.
+The compiler checks the complete port before it is passed to
+`BillingService`.
 
 ## In-memory adapters
 
